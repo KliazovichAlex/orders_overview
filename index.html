@@ -9,56 +9,170 @@
   </head>
   <body>
     <main class="stores-base">
-      <asid class="stores">
+      <aside class="stores">
         <div class="stores__search">
           <h2 class="header_pd">Stores list</h2>
           <div class="search__container">
-            <input class="search__field" type="search" placeholder="search" />
-              <input type="submit" class="search__btn-loupe" value="" />
-              <input type="reset" class="search__btn-reset"  value="" />
-          </div >
-          <div class="stores__search_btn">
+            <input class="search__field" id="search_stores" type="search" placeholder="search" />
+            <input type="submit" class="search__btn-loupe" value="" />
+            <input type="reset" class="search__btn-reset" value="" />
+          </div>
+          <div class="just_unused">
             <img
-              class="stores__search_btn-style"
+              class="unused_btn"
               src="/img/arrow-down-sign-to-navigate.svg"
               alt=""
             />
-            <img class="stores__search_btn-style" src="/img/clip.svg" alt="" />
+            <img class="unused_btn" src="/img/clip.svg" alt="" />
           </div>
         </div>
         <div class="stores__list">
-          <ul class="show-stores">
-           
-          </ul>
+          <ul class="show-stores"></ul>
         </div>
         <div class="footer">
-          <button class="footer_btn footer_btn_white">
+          <button class="footer_btn footer_btn_create" id="create_store_btn">
             <img src="/img/plus.svg" alt="" /> Create
           </button>
         </div>
-      </asid>
+      </aside>
 
       <section class="store">
-        
-        <div class="store__container">
+        <div class="store__details">
+          <h2 class="header_pd">Store Details</h2>
 
-        </div>
-      </div>
-        <div class="footer">
-          <button class="footer_btn footer_btn_white">
-            <img src="/img/plus.svg" alt="" /> Create
-          </button>
-          <button class="footer_btn footer_btn_red">
-            <img src="/img/free-icon-rubbish-bin-1483063.svg" alt="" />Delete
-          </button>
-        </div>
+          <div class="store__container">
+            <div class="store_info"></div>
+            <div class="store__filters"></div>
+          </div>
+
+            <div class="products__list">
+              <div class="store__products">
+                <table class="products" cellpadding="10px">
+                  <caption class="products__header products__header_main">
+                    Products
+                    <div class="search__container products__filter">
+                      <input class="search__field" id="product_search_field" type="search" placeholder="search" />
+                      <input type="submit" id="product_search_btn" class="search__btn-loupe" value="" />
+                      <input type="reset" id="product_search_reset" class="search__btn-reset" value="" />
+                    </div >
+                  </caption>
+                  <thead>
+                    <tr class="products__header">
+                    <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Name</th>
+                    <th class="text_dec" ><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt=""><span style="max-width: 50px">Price</span></th>
+                      <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Specs</th>
+                      <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">SupplerInfo</th>
+                      <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Country of origin</th>
+                      <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Prod. company</th>
+                      <th class="rating-mini_none text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Rating</th>
+                      <th class="rating-mini_none text_dec" width="20px"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="products__table">
+                  </tbody>
+                </table>
+                  <div class="footer">
+                    <button class="footer_btn footer_btn_create" id="create_product_btn">
+                      <img src="/img/plus.svg" alt="" /> Create
+                    </button>
+                    <button class="footer_btn footer_btn_delete">
+                      <img src="/img/free-icon-rubbish-bin-1483063.svg" alt="" />Delete
+                    </button>
+                  </div>
+            </div>
+          </div>
 
         <div class="no-store">
-          <p>Store not checked</p>
+          <div class="no-store_container">
+            <img src="/img/free-icon-civil-engineering-4634971.svg" alt="">
+            <h3>The store is not selected</h3>
+            <p>Please select the store</p>
+          </div>
         </div>
       </section>
     </main>
+      <div class="modal display_none">
+        <div class="container_create-store">
+          <h4 class="form_header">Create new store</h4>
+          <form  id="create_store" >
+            <div class="input_container">
+              <h5>Name:</h5>
+              <input class="form_input" data-error="" type="text" name="Name">
+              <h5>Email:</h5>
+              <div class="from_input_validation">
+              <input class="form_input from_input_validation"  placeholder="email@mail.com" type="text" name="Email">
+              </div>
+              <h5>Phone Number:</h5>
+              <input class="form_input" type="tel" name="PhoneNumber" placeholder="+375(**)*** ** **">
+              <h5>Address</h5>
+              <input class="form_input" type="text" name="Address">
+              <h5>Established date:</h5>
+              <input class="form_input" type="date" name="Established">
+              <h5>Floor area:</h5>
+              <input class="form_input" type="number" name="FloorArea" min="1">
+            </div>
+            <div class="form_btns">
+              <input class="submit_form" id="submit_create-store" type="submit" value="Create"></input>
+              <button id="cancel_form_store" type="reset">Cancel</button>
+          </div>
+          </form>
+        </div>
+      </div>
 
-    <script type="module"  src="index.js"></script>
+      <div class="modal display_none">
+        <div class="container_create-product">
+          <h4 class="form_header">Create new product</h4>
+          <form  id="create_product" >
+          <div class="input_container">
+            <h5>Name:</h5>
+            <input class="form_input" type="text" name="Name">
+            <h5>Price:</h5>
+            <input class="form_input" type="number" name="Price" min="1" max="10000">
+            <h5>Specs:</h5>
+            <input class="form_input" type="text" name="Specs">
+            <h5>Rating</h5>
+            <input class="form_input" type="number" name="Rating"  min="1" max="5">
+            <h5>SupplerInfo:</h5>
+            <input class="form_input" type="text" name="SupplerInfo">
+            <h5>Made In:</h5>
+            <input class="form_input" type="text" name="MadeIn">
+            <h5>Production company name:</h5>
+            <input class="form_input" type="text" name="ProductionCompanyName">
+            <p>
+              <h5>Status</h5>
+              <select class="form_input">
+                <option></option>
+                <option value="OK">Ok</option>
+                <option value="STORAGE">Storage</option>
+                <option value="OUT_OF_STOCK">Out of stock</option>
+
+              </select>
+            </p>
+          </div>
+            <div class="form_btns">
+              <input class="submit_form" id="submit_create-product" type="submit" value="Create"></input>
+              <button id="cancel_form_product" type="reset">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    <div class="modal display_none" id="delete_store">
+      <div class="modal_confirm_container">
+        <h2>confirm store deletion</h2>
+        <button class="modal_btn" id="confirm_delete">Yes</button>
+        <button class="modal_btn" id="reject_delet">No</button>
+      </div>
+    </div>  
+
+    <div class="modal display_none"  id="delete_product">
+      <div class="modal_confirm_container">
+        <h2>confirm product deletion</h2>
+        <button class="modal_btn" id="confirm_delete">Yes</button>
+        <button class="modal_btn" id="reject_delete">No</button>
+      </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
   </body>
 </html>
