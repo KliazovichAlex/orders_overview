@@ -57,15 +57,15 @@
                     </div >
                   </caption>
                   <thead>
-                    <tr class="products__header">
+                    <tr class="products__header" id="sorting">
                     <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Name</th>
                     <th class="text_dec" ><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt=""><span style="max-width: 50px">Price</span></th>
                       <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Specs</th>
                       <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">SupplerInfo</th>
                       <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Country of origin</th>
                       <th class="text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Prod. company</th>
-                      <th class="rating-mini_none text_dec"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Rating</th>
-                      <th class="rating-mini_none text_dec" width="20px"></th>
+                      <th class="rating-mini_none text_dec" width="60px"><img class="column__sort" src="/img/free-icon-two-opposite-up-and-down-arrows-side-by-side-60798.svg" alt="">Rating</th>
+                      <th class="rating-mini_none text_dec" width="40px"></th>
                     </tr>
                   </thead>
                   <tbody id="products__table">
@@ -97,61 +97,140 @@
           <form  id="create_store" >
             <div class="input_container">
               <h5>Name:</h5>
-              <input class="form_input" data-error="" type="text" name="Name">
+              <div class=" Name " data-error="">
+                <input class="form_input" data-error="" type="text" name="Name" required>
+              </div>
               <h5>Email:</h5>
-              <div class="from_input_validation">
-              <input class="form_input from_input_validation"  placeholder="email@mail.com" type="text" name="Email">
+              <div class=" Email" data-error="">
+                <input class="form_input "  placeholder="email@mail.com" type="text" name="Email" required>
               </div>
               <h5>Phone Number:</h5>
-              <input class="form_input" type="tel" name="PhoneNumber" placeholder="+375(**)*** ** **">
+              <div class=" PhoneNumber" data-error="">
+                <input class="form_input"  type="tel"
+                 name="PhoneNumber" placeholder="+375(**)*** ** **" required>
+              </div>
               <h5>Address</h5>
-              <input class="form_input" type="text" name="Address">
+              <div class=" Address" data-error="">
+                <input class="form_input" type="text" name="Address" required>
+              </div>
               <h5>Established date:</h5>
-              <input class="form_input" type="date" name="Established">
+              <div class=" Established" data-error="">
+                <input class="form_input" type="date" name="Established" required>
+              </div>
               <h5>Floor area:</h5>
-              <input class="form_input" type="number" name="FloorArea" min="1">
+              <div class=" FloorArea" data-error="">
+                <input class="form_input" type="number" name="FloorArea" min="1" required>
+              </div>
             </div>
             <div class="form_btns">
-              <input class="submit_form" id="submit_create-store" type="submit" value="Create"></input>
+              <input class="submit_form" id="submit_create-store" type="button" value="Create"></input>
               <button id="cancel_form_store" type="reset">Cancel</button>
-          </div>
+            </div>
           </form>
         </div>
       </div>
-
+          
       <div class="modal display_none">
         <div class="container_create-product">
           <h4 class="form_header">Create new product</h4>
           <form  id="create_product" >
           <div class="input_container">
             <h5>Name:</h5>
-            <input class="form_input" type="text" name="Name">
+              <div class=" Name " data-error="">
+                <input class="form_input" data-error="" type="text" name="Name" required>
+              </div>
             <h5>Price:</h5>
-            <input class="form_input" type="number" name="Price" min="1" max="10000">
+            <div class=" Price " data-error="">
+              <input class="form_input" type="number" name="Price" min="1" max="10000" required>
+            </div>
             <h5>Specs:</h5>
-            <input class="form_input" type="text" name="Specs">
+            <div class=" Specs " data-error="">
+              <input class="form_input" type="text" name="Specs" required>
+            </div>
             <h5>Rating</h5>
-            <input class="form_input" type="number" name="Rating"  min="1" max="5">
-            <h5>SupplerInfo:</h5>
-            <input class="form_input" type="text" name="SupplerInfo">
-            <h5>Made In:</h5>
-            <input class="form_input" type="text" name="MadeIn">
+            <div class=" Rating " data-error="">
+              <input class="form_input" type="number" name="Rating"  min="1" max="5" required>
+            </div>
+            <h5>SupplerInfo:</h5> 
+            <div class=" SupplierInfo " data-error="">
+              <input class="form_input" type="text" name="SupplierInfo" required>
+            </div>
+            <h5>Made In:</h5> 
+            <div class=" MadeIn " data-error="">
+              <input class="form_input" type="text" name="MadeIn" required>
+            </div>
             <h5>Production company name:</h5>
-            <input class="form_input" type="text" name="ProductionCompanyName">
+            <div class=" ProductionCompanyName " data-error="">
+              <input class="form_input" type="text" name="ProductionCompanyName" required>
+            </div>
             <p>
               <h5>Status</h5>
-              <select class="form_input">
+            <div class=" Status " data-error="">
+              <select class="form_input" name="Status">
                 <option></option>
                 <option value="OK">Ok</option>
                 <option value="STORAGE">Storage</option>
                 <option value="OUT_OF_STOCK">Out of stock</option>
-
               </select>
+            </div>
             </p>
           </div>
             <div class="form_btns">
-              <input class="submit_form" id="submit_create-product" type="submit" value="Create"></input>
+              <input  class="submit_form" type="button" id="submit_create-product"  value="Create"></input>
               <button id="cancel_form_product" type="reset">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal display_none">
+        <div class="container_redact-product">
+          <h4 class="form_header">Redact product</h4>
+          <form  id="redact_product" >
+          <div class="input_container">
+            <h5>Name:</h5>
+              <div class=" Name " data-error="">
+                <input class="form_input" data-error="" type="text" name="Name" required>
+              </div>
+            <h5>Price:</h5>
+            <div class=" Price " data-error="">
+              <input class="form_input" type="number" name="Price" min="1" max="10000" required>
+            </div>
+            <h5>Specs:</h5>
+            <div class=" Specs " data-error="">
+              <input class="form_input" type="text" name="Specs" required>
+            </div>
+            <h5>Rating</h5>
+            <div class=" Rating " data-error="">
+              <input class="form_input" type="number" name="Rating"  min="1" max="5" required>
+            </div>
+            <h5>SupplerInfo:</h5> 
+            <div class=" SupplierInfo " data-error="">
+              <input class="form_input" type="text" name="SupplierInfo" required>
+            </div>
+            <h5>Made In:</h5> 
+            <div class=" MadeIn " data-error="">
+              <input class="form_input" type="text" name="MadeIn" required>
+            </div>
+            <h5>Production company name:</h5>
+            <div class=" ProductionCompanyName " data-error="">
+              <input class="form_input" type="text" name="ProductionCompanyName" required>
+            </div>
+            <p>
+              <h5>Status</h5>
+            <div class=" Status " data-error="">
+              <select class="form_input" name="Status">
+                <option></option>
+                <option value="OK">Ok</option>
+                <option value="STORAGE">Storage</option>
+                <option value="OUT_OF_STOCK">Out of stock</option>
+              </select>
+            </div>
+            </p>
+          </div>
+            <div class="form_btns">
+              <input class="submit_form" type="button" id="submit_redact-product"  value="Redact"></input>
+              <button id="redact_form_product" type="reset">Cancel</button>
             </div>
           </form>
         </div>
@@ -173,6 +252,6 @@
       </div>
     </div>
 
-    <script type="module" src="index.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>

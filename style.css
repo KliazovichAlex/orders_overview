@@ -281,6 +281,10 @@ td {
   text-overflow: ellipsis;
 }
 
+.redact_product {
+  padding-right: 5px;
+}
+
 .footer {
   position: sticky;
   bottom: 10px;
@@ -326,10 +330,15 @@ td {
   padding: 2px;
   cursor: pointer;
   transition: 0.5;
+  transition: 1s;
 }
 
 .column__sort:hover {
   background-color: #8a9ab8;
+}
+
+.column__sort_active {
+  transform: rotate(180deg);
 }
 
 .column__sort_rotate {
@@ -378,12 +387,22 @@ td {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.container_redact-product {
+  position: fixed;
+  border: 2px sold black;
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .input_container {
   padding: 20px 20px 0 20px;
 }
 .form_input {
   width: 100%;
-  margin: 5px 0;
 }
 .from_input_validation {
   position: relative;
@@ -393,6 +412,10 @@ td {
   content: attr(data-error) " ";
   color: red;
   font-size: 10px;
+}
+
+h5 {
+  margin-top: 5px;
 }
 
 h5::before {
@@ -432,6 +455,10 @@ h5::before {
 
 .modal_btn {
   width: 48%;
+}
+
+button[type="reset"] {
+  cursor: pointer;
 }
 
 @media (min-width: 480px) and (max-width: 679px) {
